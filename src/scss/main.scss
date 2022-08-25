@@ -1,0 +1,66 @@
+@import "~bootstrap/scss/bootstrap";
+
+.data-table {
+    &--responsive {
+        @include media-breakpoint-up(md) {
+            overflow-x: scroll;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        table, tr, tbody, td {
+            display: block;
+        }
+
+        thead {
+            display: none;
+        }
+
+        table {
+            width: 100%;
+
+            thead {
+                width: 100%;
+
+                tr {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    th {
+                        width: 100%;
+                    }
+                }
+            }
+
+            tbody {
+                width: 100%;
+
+                tr {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    td {
+                        width: 100%;
+                        display: flex;
+                        padding: .5rem 1rem;
+
+                        &:first-child {
+                            padding: 1rem 1rem .5rem 1rem;
+                        }
+
+                        &:last-child {
+                            padding: .5rem 1rem 1rem 1rem;
+                        }
+                        
+                        span {
+                            width: 135px;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
