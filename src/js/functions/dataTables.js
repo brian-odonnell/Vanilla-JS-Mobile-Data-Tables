@@ -84,7 +84,7 @@ setTimeout(function() {
 }, 100)
 
 // Run function on orientation change
-screen.orientation.addEventListener('change', function() {
+window.addEventListener('orientationchange', () => {
     console.log('Screen rotate');
     mobileTables();
 })

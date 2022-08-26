@@ -51,7 +51,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Webpack App',
+            title: 'Vanilla JS Mobile Data Tables',
             filename: 'index.html',
             template: 'src/template.html'
         })
