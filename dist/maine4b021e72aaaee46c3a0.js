@@ -84,7 +84,6 @@ setTimeout(function () {
 }, 100); // Run function on orientation change
 
 window.addEventListener('orientationchange', function () {
-  console.log('Screen rotate');
   mobileTables();
 }); // Run function on window resize
 
@@ -1118,4 +1117,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main70dcbb31d21fc15bc076.js.map
+//# sourceMappingURL=maine4b021e72aaaee46c3a0.js.map
