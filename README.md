@@ -6,7 +6,7 @@ This is some vanilla JS that I wrote to make data heavy tables look and function
 
 ## Functions
 1. Allows the table to scroll horizontally when the table width is larger than the container width on screen sizes larger than 767px
-2. On screen sizes smaller than 768px it stacks the cell, inserts the copy from the corrisponding `<th>` in the each cell to the left of the cell data as a `<span>`, and hides the `<thead>`
+2. On screen sizes smaller than 768px it stacks the cell, inserts the copy from the corresponding `<th>` in the each cell to the left of the cell data as a `<span>`, and hides the `<thead>`
 3. If the class `.no-mobile` is added to a `<th>` then that column header does not get added to the cells on mobile
 
 ## Requirements
