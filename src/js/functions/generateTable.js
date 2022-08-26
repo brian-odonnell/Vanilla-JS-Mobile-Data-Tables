@@ -1,7 +1,7 @@
 import sourceData from '../../data/data.json';
 
 const data = sourceData.pokemon;
-let table = document.getElementById('js-table-data'), row, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8;
+let table = document.getElementById('js-table-data'), row, cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9;
 
 // Loop through data and build table rows
 data.map((element) => {
@@ -9,6 +9,7 @@ data.map((element) => {
     let weaknesses = "";
     let prevEvolution = "";
     let nextEvolution = "";
+    let image = "";
 
     // Create cells in each row
     row = table.insertRow();
@@ -20,6 +21,7 @@ data.map((element) => {
     cell6 = row.insertCell();
     cell7 = row.insertCell();
     cell8 = row.insertCell();
+    cell9 = row.insertCell();
 
     // Generate type string
     element.type.map((element, index) => {
@@ -39,6 +41,7 @@ data.map((element) => {
         }
     })
 
+    // Generate previous evolutions string
     if (element.prev_evolution) {
         element.prev_evolution.map((element, index) => {
             if (index == 0) {
@@ -47,8 +50,11 @@ data.map((element) => {
                 prevEvolution = prevEvolution + ", " + element.name;
             }
         })
+    } else {
+        prevEvolution = "&mdash;"
     }
 
+    // Generate future evolutions string
     if (element.next_evolution) {
         element.next_evolution.map((element, index) => {
             if (index == 0) {
@@ -57,15 +63,24 @@ data.map((element) => {
                 nextEvolution = nextEvolution + ", " + element.name;
             }
         })
+    } else {
+        nextEvolution = "&mdash;"
+    }
+
+    // Generate image button
+    if (element.img) {
+        image = '<img src="' + element.img + '" class="mx-auto" />';
     }
 
     // Add data to cells
-    cell1.innerHTML = element.num;
-    cell2.innerHTML = element.name;
-    cell3.innerHTML = types;
-    cell4.innerHTML = weaknesses;
-    cell5.innerHTML = element.height;
-    cell6.innerHTML = element.weight;
-    cell7.innerHTML = prevEvolution;
-    cell8.innerHTML = nextEvolution;
+    cell1.innerHTML = image;
+    cell1.classList.add('text-center');
+    cell2.innerHTML = element.num;
+    cell3.innerHTML = element.name;
+    cell4.innerHTML = types;
+    cell5.innerHTML = weaknesses;
+    cell6.innerHTML = element.height;
+    cell7.innerHTML = element.weight;
+    cell8.innerHTML = prevEvolution;
+    cell9.innerHTML = nextEvolution;
 })
