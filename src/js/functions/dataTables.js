@@ -65,16 +65,16 @@ function horizontalScroll(currentTable) {
 // Adds column headers to cells for mobile
 function addMobileLabels(t, bodyCells, label) {
     // If the cell does not already contain a span AND the label value does not equal "null"...
-    if (!bodyCells[t].innerHTML.includes('span') && label != "null") {
-        bodyCells[t].innerHTML = '<span>' + label + '</span>' + bodyCells[t].innerHTML;
+    if (!bodyCells[t].innerHTML.includes('js-mobile-head') && label != "null") {
+        bodyCells[t].innerHTML = '<span class="js-mobile-head">' + label + '</span>' + bodyCells[t].innerHTML;
     }
 }
 
 // Removes column headers from cells for screen sizes other than mobile
 function removeMobileLabel(t, bodyCells) {
     // If the cell already contains a span...
-    if (bodyCells[t].innerHTML.includes('span')) {
-        bodyCells[t].removeChild(bodyCells[t].getElementsByTagName('span')[0]);
+    if (bodyCells[t].innerHTML.includes('js-mobile-head')) {
+        bodyCells[t].removeChild(bodyCells[t].getElementsByClassName('js-mobile-head')[0]);
     }
 }
 
